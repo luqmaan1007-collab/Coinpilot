@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">coinpilot</string>
+    <string name="title_activity_main">coinpilot</string>
+    <string name="package_name">com.coinpilot.aip</string>
+    <string name="custom_url_scheme">com.coinpilot.aip</string>
+</resources>
