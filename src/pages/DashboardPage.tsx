@@ -63,11 +63,14 @@ useEffect(() => {
 <div style={{ margin: "20px 0", textAlign: "center" }}>
   <ins
     className="adsbygoogle"
-    style={{ display: "block", minHeight: "90px" }}
+    style={{
+      display: "block",
+      width: "300px",
+      height: "250px",
+      margin: "0 auto"
+    }}
     data-ad-client="ca-pub-4928876343257599"
     data-ad-slot="8327013930"
-    data-ad-format="auto"
-    data-full-width-responsive="true"
   />
 </div>
       <div className="stats-grid">
