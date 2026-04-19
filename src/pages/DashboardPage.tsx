@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
-import AdBanner from '../components/AdBanner';
 import { Link } from 'react-router-dom';
+import AdBanner from '../components/AdBanner';
 import { TrendingUp, TrendingDown, DollarSign, Bot, CreditCard, ArrowUpFromLine, Loader2 } from 'lucide-react';
 import { supabase } from '../lib/supabase';
 import { useAuth } from '../hooks/useAuth';
