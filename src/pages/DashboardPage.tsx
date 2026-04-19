@@ -1,6 +1,5 @@
 import { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
-import AdBanner from '../components/AdBanner';
+import { useLocation, Link } from 'react-router-dom';
 import { TrendingUp, TrendingDown, DollarSign, Bot, CreditCard, ArrowUpFromLine, Loader2 } from 'lucide-react';
 import { supabase } from '../lib/supabase';
 import { useAuth } from '../hooks/useAuth';
@@ -17,11 +16,22 @@ const fmtDate = (d: string) => new Date(d).toLocaleDateString('en-US', { month: 
 export default function DashboardPage() {
   const { user } = useAuth();
   const { profile, loading: profileLoading } = useProfile(user?.id);
+  const location = useLocation();
   const [portfolio, setPortfolio] = useState<PortfolioItem[]>([]);
   const [transactions, setTransactions] = useState<Transaction[]>([]);
   const [coins, setCoins] = useState<CoinMarket[]>([]);
   const [loading, setLoading] = useState(true);
+useEffect(() => {
+  const timer = setTimeout(() => {
+    try {
+      if (typeof window !== "undefined") {
+        (window.adsbygoogle = window.adsbygoogle || []).push({});
+      }
+    } catch (e) {}
+  }, 800);
 
+  return () => clearTimeout(timer);
+}, [location.pathname]);
   useEffect(() => {
     if (!user) return;
     Promise.all([
@@ -50,7 +60,16 @@ export default function DashboardPage() {
       <div className="page-header">
         <div><h2>Dashboard</h2><p>Welcome back, {profile?.full_name || user?.email?.split('@')[0]}</p></div>
       </div>
-
+<div style={{ margin: "20px 0", textAlign: "center" }}>
+  <ins
+    className="adsbygoogle"
+    style={{ display: "block", minHeight: "90px" }}
+    data-ad-client="ca-pub-4928876343257599"
+    data-ad-slot="8327013930"
+    data-ad-format="auto"
+    data-full-width-responsive="true"
+  />
+</div>
       <div className="stats-grid">
         <div className="stat-card accent">
           <div className="stat-icon"><DollarSign size={22} /></div>
